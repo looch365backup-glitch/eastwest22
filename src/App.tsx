@@ -1,6 +1,7 @@
 import React from 'react';
 import { Truck, Phone, Mail, MapPin, Instagram, Facebook, ArrowRight, ShieldCheck, Clock, Settings, MessageCircle, ShoppingBag, ShoppingCart, X, Plus, Minus, CreditCard, Lock, CheckCircle2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { Analytics } from '@vercel/analytics/react';
 
 const Navbar = ({ onNavigate, cartCount, currentView }: { onNavigate: (view: 'home' | 'store') => void, cartCount: number, currentView: string }) => (
   <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-200/50">
@@ -942,6 +943,7 @@ export default function App() {
           onClear={() => setCart([])} 
         />
       )}
+      <Analytics />
     </div>
   );
 }
